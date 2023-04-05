@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .container.mt-3 
+    form(action='/captcha' method='post' enctype='multipart/form-data')
+      .mb-3.mt-3     
+        label(for='file' style='font-size: 20px; font-weight: bold;') Upload Image File
+        br
+        input.from-control(type='file' name='file' accept='image/*' required='' id='')
+      .d-grid  
+        button.btn.btn-danger.btn-block Extract Text From Image
+      .mb-3.mt-3
+        label(for='file') Output:
+          textarea#comment.form-control(rows='5' cols="200" name='text') #{data}
